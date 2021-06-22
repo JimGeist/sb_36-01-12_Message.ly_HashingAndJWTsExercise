@@ -3,7 +3,8 @@
 
 const app = require("./app");
 
+const { CFG_PORT } = require("./config");
 
-app.listen(3000, function () {
-  console.log("Listening on 3000");
+app.listen(CFG_PORT, function () {
+  console.log(`${(new Date()).toISOString()}: Server listening on port ${CFG_PORT}.`);
 });

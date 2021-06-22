@@ -3,7 +3,7 @@
 
 // const app = require("../app");
 // const db = require("../db");
-// const User = require("../models/user");
+// const User = require("../models/userModel");
 
 
 // describe("Auth Routes Test", function () {

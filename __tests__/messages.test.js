@@ -1,6 +1,6 @@
 const db = require("../db");
-const User = require("../models/user");
-const Message = require("../models/message");
+const User = require("../models/userModel");
+const Message = require("../models/messageModel");
 
 
 describe("Test Message class", function () {
@@ -62,7 +62,7 @@ describe("Test Message class", function () {
 
     Message.markRead(m.id);
     const result = await db.query("SELECT read_at from messages where id=$1",
-        [m.id]);
+      [m.id]);
     expect(result.rows[0].read_at).toEqual(expect.any(Date));
   });
 
@@ -89,6 +89,6 @@ describe("Test Message class", function () {
   });
 });
 
-afterAll(async function() {
+afterAll(async function () {
   await db.end();
 });

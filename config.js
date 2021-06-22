@@ -1,20 +1,23 @@
-/** Common config for message.ly */
+/** Common config for Message.ly */
 
 // read .env files and make environmental variables
 
 require("dotenv").config();
 
-const DB_URI = (process.env.NODE_ENV === "test")
+const CFG_PORT = 3000;
+
+const CFG_DB_URI = (process.env.NODE_ENV === "test")
   ? "postgresql:///messagely_test"
   : "postgresql:///messagely";
 
-const SECRET_KEY = process.env.SECRET_KEY || "secret";
+const CFG_SECRET_KEY = process.env.SECRET_KEY || "PlainTextSecret!";
 
-const BCRYPT_WORK_FACTOR = 12;
+const CFG_BCRYPT_WORK_FACTOR = 12;
 
 
 module.exports = {
-  DB_URI,
-  SECRET_KEY,
-  BCRYPT_WORK_FACTOR,
+  CFG_PORT,
+  CFG_DB_URI,
+  CFG_SECRET_KEY,
+  CFG_BCRYPT_WORK_FACTOR
 };
